@@ -1,10 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 
+SESSION_COOKIE = "YOUR_SESSION_COOKIE_HERE"
+
 def get_data(day):
     url = "https://adventofcode.com/2025/day/{day}/input"
     cookies = {
-        "session": "YOUR_SESSION_COOKIE_HERE"
+        "session": SESSION_COOKIE
     }
 
     response = requests.get(url.format(day=day), cookies=cookies)
@@ -16,7 +18,7 @@ def answer(num, part, day):
     url = "https://adventofcode.com/2025/day/{day}/answer"
 
     cookies = {
-        "session": "YOUR_SESSION_COOKIE_HERE"
+        "session": SESSION_COOKIE
     }
 
     payload = {
